@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -49,13 +50,21 @@ export default function Footer() {
   </a>
 
   <a
-    href="www.linkedin.com/in/jumail-jamal"
-    target="_blank"
-    rel="noreferrer"
-    className="hover:text-blue-400 transition"
-  >
-    <FaLinkedin />
-  </a>
+  href="https://www.linkedin.com/in/jumail-jamal"
+  target="_blank"
+  rel="noreferrer"
+  className="hover:text-blue-400 transition"
+>
+  <FaLinkedin />
+</a>
+<a
+  href="https://www.instagram.com/_jumail_j"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-pink-500 transition"
+>
+  <FaInstagram />
+</a>
 </div>
 
       </div>
