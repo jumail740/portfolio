@@ -133,7 +133,7 @@ export default function Projects() {
 
     {/* BUTTON */}
     <a
-      href="https://github.com/yourusername/resume-analyzer"
+      href="https://github.com/jumail740/Resume_Analyzer"
       target="_blank"
       rel="noreferrer"
       className="inline-block mt-2 text-sm text-blue-400 hover:underline"

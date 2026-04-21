@@ -49,7 +49,7 @@ export default function Footer() {
   </a>
 
   <a
-    href="https://linkedin.com/in/your-link"
+    href="www.linkedin.com/in/jumail-jamal"
     target="_blank"
     rel="noreferrer"
     className="hover:text-blue-400 transition"
