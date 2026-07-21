@@ -1,33 +1,52 @@
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const links = ["Home", "About", "Experience", "Projects", "Contact"];
+
   return (
-    <nav className="fixed top-0 w-full px-6 md:px-20 py-4 
+    <nav className="fixed top-0 w-full px-4 md:px-10 py-4 
     flex justify-between items-center 
     bg-black/40 backdrop-blur-md border-b border-gray-800 z-50">
 
       {/* Logo */}
       <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-  Jumail
-</h1>
+        JUMAIL JAMAL
+      </h1>
 
-      {/* Links */}
-      <ul className="flex gap-6 text-sm text-gray-300">
-
-        {["Home", "About", "Experience", "Projects", "Contact"].map((item, i) => (
+      {/* Desktop */}
+      <ul className="hidden md:flex gap-6 text-sm text-gray-300">
+        {links.map((item, i) => (
           <li key={i}>
-            <a
-              href={`#${item.toLowerCase()}`}
-              className="hover:text-white transition relative group"
-            >
+            <a href={`#${item.toLowerCase()}`} className="hover:text-white">
               {item}
-
-              {/* Underline animation */}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-400 
-              transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
         ))}
-
       </ul>
+
+      {/* Mobile Button */}
+      <div className="md:hidden text-white text-xl" onClick={() => setOpen(!open)}>
+        {open ? <FaTimes /> : <FaBars />}
+      </div>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="absolute top-16 left-0 w-full bg-black border-t border-gray-800 flex flex-col items-center gap-6 py-6 md:hidden">
+          {links.map((item, i) => (
+            <a
+              key={i}
+              href={`#${item.toLowerCase()}`}
+              onClick={() => setOpen(false)}
+              className="text-gray-300 hover:text-white"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }

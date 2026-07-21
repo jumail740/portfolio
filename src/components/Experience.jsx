@@ -27,7 +27,7 @@ export default function Experience() {
           </p>
 
           <ul className="mt-4 text-gray-400 space-y-2 text-sm list-disc list-inside">
-            <li>Built web apps using Django and React</li>
+            <li>Built web apps using Django and Python</li>
             <li>Developed responsive UI components</li>
             <li>Integrated APIs and managed backend logic</li>
             <li>Used GitHub for version control</li>

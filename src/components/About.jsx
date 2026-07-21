@@ -13,14 +13,24 @@ export default function About() {
     >
       <div className="grid md:grid-cols-2 gap-12 items-center">
 
-        {/* IMAGE */}
-        <div className="flex justify-center">
-          <img
-            src={profile}
-            alt="profile"
-            className="w-60 h-60 object-cover rounded-full border-4 border-gray-700 shadow-lg"
-          />
-        </div>
+       {/* IMAGE */}
+<div className="flex flex-col items-center text-center">
+  <img
+    src={profile}
+    alt="profile"
+    className="w-60 h-60 object-cover rounded-full border-4 border-gray-700 shadow-lg"
+  />
+
+  <h3 className="mt-5 text-2xl font-bold text-white">
+    Jumail Jamal
+  </h3>
+
+  <p className="mt-2 text-gray-400 text-base">
+  Python Fullstack Developer
+</p>
+</div>
+        
+        
 
         {/* CONTENT */}
         <div>

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import jersey from "../assets/jersey.png";
 import resume from "../assets/resume.png";
+import expense from "../assets/expense.png";
 import GlareCard from "./GlareCard";
 
 export default function Projects() {
@@ -25,11 +26,13 @@ export default function Projects() {
         >
 
           {/* IMAGE */}
-          <div className="overflow-hidden">
+              <div className="overflow-hidden bg-[#0f172a]">
+
             <img
               src={jersey}
               alt="project"
-              className="w-full h-48 object-cover group-hover:scale-110 transition duration-500"
+                    className="w-full h-64 object-contain group-hover:scale-105 transition duration-500"
+
             />
           </div>
 
@@ -89,11 +92,11 @@ export default function Projects() {
 >
 
   {/* IMAGE */}
-  <div className="overflow-hidden">
+      <div className="overflow-hidden bg-[#0f172a]">
     <img
       src={resume}
       alt="resume analyzer"
-      className="w-full h-48 object-cover group-hover:scale-110 transition duration-500"
+      className="w-full h-64 object-contain group-hover:scale-105 transition duration-500"
     />
   </div>
 
@@ -143,6 +146,76 @@ export default function Projects() {
 
   </div>
 </motion.div>
+</GlareCard>
+{/* EXPENSE TRACKER PROJECT */}
+<GlareCard>
+  <motion.div
+    whileHover={{ y: -10, scale: 1.02 }}
+    className="group bg-[#0f172a] rounded-xl overflow-hidden border border-gray-800 
+    hover:border-blue-500 transition duration-300 hover:shadow-lg hover:shadow-blue-500/10"
+  >
+    {/* IMAGE */}
+    <div className="overflow-hidden bg-[#0f172a]">
+  <img
+    src={expense}
+    alt="Expense Tracker"
+    className="w-full h-64 object-contain group-hover:scale-105 transition duration-500"
+  />
+</div>
+
+    {/* CONTENT */}
+    <div className="p-6">
+      <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-400 transition">
+        Expense Tracker
+      </h3>
+
+      <p className="text-gray-400 text-sm mb-4">
+        A full-stack expense management application that enables users to securely track income and expenses, manage categories, and view financial summaries through a responsive dashboard.
+      </p>
+
+      {/* FEATURES */}
+      <div className="mb-4">
+        <p className="text-blue-400 text-sm mb-2">Key Features:</p>
+        <ul className="text-gray-400 text-sm space-y-1">
+          <li>• JWT Authentication</li>
+          <li>• Income & Expense CRUD</li>
+          <li>• Category-wise Reports</li>
+          <li>• Dashboard Summary</li>
+          <li>• REST API Integration</li>
+        </ul>
+      </div>
+
+      {/* TECH TAGS */}
+      <div className="flex flex-wrap gap-2 mb-4">
+        {[
+          "React",
+          "Django",
+          "Python",
+          "Django REST",
+          "MySQL",
+          "JWT",
+          "Tailwind CSS",
+        ].map((tech, i) => (
+          <span
+            key={i}
+            className="text-xs px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full group-hover:bg-blue-500/20 transition"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+
+      {/* BUTTON */}
+      <a
+        href="https://github.com/jumail740/Expense-Tracker"
+        target="_blank"
+        rel="noreferrer"
+        className="inline-block mt-2 text-sm text-blue-400 hover:underline"
+      >
+        View Project →
+      </a>
+    </div>
+  </motion.div>
 </GlareCard>
 
       </div>

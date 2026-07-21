@@ -2,15 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* GLOBAL RESET IMPROVEMENTS */
+* {
+  scroll-margin-top: 80px; /* fixes navbar overlap when clicking links */
+}
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background-color: black;
   color: white;
   font-family: sans-serif;
+  overflow-x: hidden; /* ✅ prevents horizontal scroll issues */
 }
+
+/* REUSABLE SECTION CLASS (IMPORTANT) */
+.section {
+  @apply px-4 sm:px-6 md:px-12 lg:px-20 py-20 md:py-28;
+}
+
+/* GRID ANIMATION */
 @keyframes moveGrid {
   from {
     transform: translateY(0);
@@ -24,6 +36,7 @@ body {
   animation: moveGrid 20s linear infinite;
 }
 
+/* LOGO SCROLL ANIMATION */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -37,22 +50,16 @@ body {
   animation: scroll 20s linear infinite;
 }
 
-.animate-scroll:hover {
-  animation-play-state: paused;
+/* Pause on hover (desktop only) */
+@media (hover: hover) {
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
 }
 
-/* .ghost-cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  pointer-events: none;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease;
-  z-index: 9999;
+/* MOBILE PERFORMANCE OPTIMIZATION */
+@media (max-width: 640px) {
+  .animate-scroll {
+    animation-duration: 30s; /* slower = smoother on mobile */
+  }
 }
-.ghost-cursor {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-} */
